@@ -1,6 +1,6 @@
 import axios from "axios";
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const API_URL = `${baseURL}/auth`;
+const API_URL = `${baseURL}/winners`;
 // const API_URL = "http://localhost:5000/api/winners"; 
 
 // GET all serials with pagination
