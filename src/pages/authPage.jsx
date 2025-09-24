@@ -26,7 +26,7 @@ export default function AuthPage() {
       }
 
       if (result?.token) {
-        navigate("/serials");
+        navigate("/winners");
       }
     } catch (err) {
       toast.error(err?.message || "Something went wrong");

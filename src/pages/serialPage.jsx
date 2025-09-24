@@ -97,6 +97,7 @@ const SerialPage = () => {
             <option value="unclaimed">Unclaimed</option>
             <option value="claimed">Claimed</option>
             <option value="cleared">Cleared</option>
+            <option value="checked">Checked</option>
           </select>
         </div>
 
