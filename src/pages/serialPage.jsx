@@ -129,6 +129,7 @@ const SerialPage = () => {
               <th className="p-3 border-b">Winner Name</th>
               <th className="p-3 border-b">Winner UPI</th>
               <th className="p-3 border-b">Created At</th>
+              <th className="p-3 border-b">Checked At</th>
               <th className="p-3 border-b">Claimed At</th>
               <th className="p-3 border-b">Cleared At</th>
             </tr>
@@ -148,6 +149,11 @@ const SerialPage = () => {
                   <td className="p-3 border-b">
                     {serial.createdAt
                       ? new Date(serial.createdAt).toLocaleString()
+                      : "-"}
+                  </td>
+                  <td className="p-3 border-b">
+                    {serial.checkedAt
+                      ? new Date(serial.checkedAt).toLocaleString()
                       : "-"}
                   </td>
                   <td className="p-3 border-b">
