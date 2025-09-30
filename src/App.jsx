@@ -6,6 +6,7 @@ import AuthPage from "./pages/authPage";
 import WinnersPage from "./pages/winnerPage";
 import SerialPage from "./pages/serialPage";
 import ClaimRewardPage from "./pages/rewardPage";
+import TermsAndConditions from "./pages/Terms&Conditions"
 
 function App() {
   const { user } = useSelector((state) => state.auth); // use user instead of token
@@ -28,6 +29,7 @@ function App() {
           element={user ? <SerialPage /> : <Navigate to="/auth" replace />}
         />
         <Route path="/claim" element={<ClaimRewardPage />} />
+        <Route path="/t&c" element={<TermsAndConditions />} />
 
         {/* Catch all */}
         <Route

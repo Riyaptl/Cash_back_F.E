@@ -161,9 +161,15 @@ const ClaimRewardPage = () => {
                     {loading ? "Claiming..." : "Claim Reward"}
                   </button>
                   <p className="text-sm text-gray-500 text-center mt-1">
-                      For any dispute or payment-related concerns, please contact us on{" "}
-                      <span className="text-purple-600 font-medium">+91 8000440250</span>.
-                    </p>
+                    For any dispute or payment-related concerns, please contact us on{" "}
+                    <span className="text-purple-600 font-medium">+91 8000440250</span>.
+                  </p>
+                  <a
+                    href="/t&c"
+                    className="text-xs text-gray-400 hover:text-gray-600"
+                  >
+                    *T&C Applied
+                  </a>
                 </motion.div>
               )}
             </div>
