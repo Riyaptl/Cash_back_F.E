@@ -1,7 +1,7 @@
 import axios from "axios";
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-// const API_URL = `${baseURL}/serials`;
-const API_URL = "http://localhost:5000/api/serials"; 
+const API_URL = `${baseURL}/serials`;
+// const API_URL = "http://localhost:5000/api/serials"; 
 
 // GET all serials with pagination
 const getSerials = async ({ page = 1, status, price }) => {
