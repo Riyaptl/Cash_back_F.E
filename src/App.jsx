@@ -29,7 +29,8 @@ function App() {
           path="/serials"
           element={user ? <SerialPage /> : <Navigate to="/auth" replace />}
         />
-        <Route path="/claim" element={user? <ClaimRewardPage/> : <MaintenancePage/>} />
+        {/* <Route path="/claim" element={user? <ClaimRewardPage/> : <MaintenancePage/>} /> */}
+        <Route path="/claim" element={<ClaimRewardPage/>} />
         <Route path="/t&c" element={<TermsAndConditions />} />
 
         {/* Catch all */}
