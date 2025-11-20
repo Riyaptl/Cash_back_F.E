@@ -164,6 +164,7 @@ const ClaimRewardPage = () => {
                     For any dispute or payment-related concerns, please contact us on{" "}
                     <span className="text-purple-600 font-medium">+91 8000440250</span>.
                   </p>
+                  <p className="text-xs text-red-500 mt-1">In case of suspected fraud, the customer must provide proof of purchase. Failure to do so may result in cashback cancellation and legal action. Refer to T&Cs for details.</p>
                   <a
                     href="/t&c"
                     className="text-xs text-gray-400 hover:text-gray-600"
