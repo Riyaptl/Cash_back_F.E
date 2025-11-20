@@ -20,8 +20,7 @@ export default function TermsAndConditions() {
           <h2 className="text-lg font-semibold mb-2">1. Proof of Purchase</h2>
           <p className="text-sm leading-relaxed">
             In the event of any suspicious or disputed activity, the burden of proof lies with the customer and s/he will be required to provide
-            valid proof of purchase. Acceptable proof may include invoices, receipts, or any official
-            confirmation issued at the time of purchase. Failure to provide valid proof of purchase may lead to cancellation of cashback benefits and legal action.
+            valid proof of purchase. Acceptable proof may include invoices, receipts, or photograph of scratched coupon code with visible serial number. Failure to provide valid proof of purchase may lead to cancellation of cashback benefits and legal action.
           </p>
         </section>
 
