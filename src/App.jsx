@@ -6,40 +6,39 @@ import AuthPage from "./pages/authPage";
 import WinnersPage from "./pages/winnerPage";
 import SerialPage from "./pages/serialPage";
 import ClaimRewardPage from "./pages/rewardPage";
-import TermsAndConditions from "./pages/Terms&Conditions"
-import MaintenancePage from "./pages/maintenance"
+import TermsAndConditions from "./pages/Terms&Conditions";
+import MaintenancePage from "./pages/maintenance";
 
 function App() {
-  const { user } = useSelector((state) => state.auth); // use user instead of token
+  const { user } = useSelector((state) => state.auth);
 
   return (
     <Router>
       <Toaster position="top-center" />
-      <Routes>
-        <Route
-          path="/"
-          element={user ? <Navigate to="/winners" replace /> : <Navigate to="/auth" replace />}
-        />
-        <Route path="/auth" element={<AuthPage />} />
-        <Route
-          path="/winners"
-          element={user ? <WinnersPage /> : <Navigate to="/auth" replace />}
-        />
-        <Route
-          path="/serials"
-          element={user ? <SerialPage /> : <Navigate to="/auth" replace />}
-        />
-        {/* <Route path="/claim" element={user? <ClaimRewardPage/> : <MaintenancePage/>} /> */}
-        <Route path="/claim" element={<ClaimRewardPage/>} />
-        <Route path="/t&c" element={<TermsAndConditions />} />
 
-        {/* Catch all */}
-        <Route
-          path="*"
-          element={<h1 className="text-center mt-10 text-2xl">404 - Page Not Found</h1>}
-        />
-        
-      </Routes>
+      {!user ? (
+        // 🚧 If NOT logged in → show only Maintenance Page
+        <MaintenancePage />
+      ) : (
+        // ✅ If logged in → allow full app access
+        <Routes>
+          <Route path="/" element={<Navigate to="/winners" replace />} />
+          <Route path="/winners" element={<WinnersPage />} />
+          <Route path="/serials" element={<SerialPage />} />
+          <Route path="/claim" element={<ClaimRewardPage />} />
+          <Route path="/t&c" element={<TermsAndConditions />} />
+
+          {/* Catch all */}
+          <Route
+            path="*"
+            element={
+              <h1 className="text-center mt-10 text-2xl">
+                404 - Page Not Found
+              </h1>
+            }
+          />
+        </Routes>
+      )}
     </Router>
   );
 }

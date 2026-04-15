@@ -6,20 +6,20 @@ const MaintenancePage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white shadow-lg rounded-2xl p-8 max-w-md text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          🚧 Under Maintenance
+          😕 Oops! This Offer Has Ended
         </h1>
         <p className="text-gray-600 mb-6">
-          Our services are currently undergoing scheduled maintenance.
+          This offer is no longer available.
           <br />
-          We’ll be back online by:
+          It expired on:
         </p>
-        <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
-          <p className="text-lg font-semibold text-purple-700">
-            1st October, 3:00 PM
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+          <p className="text-lg font-semibold text-red-600">
+            15th March, 2026
           </p>
         </div>
         <p className="text-sm text-gray-500">
-          Thank you for your patience and understanding. 🙏
+          Stay tuned for more exciting offers coming your way! ✨
         </p>
       </div>
     </div>
