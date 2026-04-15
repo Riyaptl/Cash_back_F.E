@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
+
 import AuthPage from "./pages/authPage";
 import WinnersPage from "./pages/winnerPage";
 import SerialPage from "./pages/serialPage";
@@ -16,32 +17,37 @@ function App() {
     <Router>
       <Toaster position="top-center" />
 
-      <Route path="/auth" element={<AuthPage />} />
-      {!user ? (
-        // 🚧 If NOT logged in → show only Maintenance Page
-        <MaintenancePage />
-      ) : (
-        // ✅ If logged in → allow full app access
-        <Routes>
-          <Route path="/" element={<Navigate to="/winners" replace />} />
-          <Route path="/winners" element={<WinnersPage />} />
-          <Route path="/serials" element={<SerialPage />} />
-          <Route path="/claim" element={<ClaimRewardPage />} />
-          <Route path="/t&c" element={<TermsAndConditions />} />
+      <Routes>
+        {!user ? (
+          // 🚧 Not logged in → ONLY Maintenance + Auth
+          <>
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="*" element={<MaintenancePage />} />
+          </>
+        ) : (
+          // ✅ Logged in → full access
+          <>
+            <Route path="/" element={<Navigate to="/winners" replace />} />
+            <Route path="/winners" element={<WinnersPage />} />
+            <Route path="/serials" element={<SerialPage />} />
+            <Route path="/claim" element={<ClaimRewardPage />} />
+            <Route path="/t&c" element={<TermsAndConditions />} />
 
-          {/* Optional: still allow auth if needed */}
+            {/* optional */}
+            <Route path="/auth" element={<AuthPage />} />
 
-          {/* Catch all */}
-          <Route
-            path="*"
-            element={
-              <h1 className="text-center mt-10 text-2xl">
-                404 - Page Not Found
-              </h1>
-            }
-          />
-        </Routes>
-      )}
+            {/* catch all */}
+            <Route
+              path="*"
+              element={
+                <h1 className="text-center mt-10 text-2xl">
+                  404 - Page Not Found
+                </h1>
+              }
+            />
+          </>
+        )}
+      </Routes>
     </Router>
   );
 }
