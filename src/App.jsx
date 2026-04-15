@@ -16,6 +16,7 @@ function App() {
     <Router>
       <Toaster position="top-center" />
 
+      <Route path="/auth" element={<AuthPage />} />
       {!user ? (
         // 🚧 If NOT logged in → show only Maintenance Page
         <MaintenancePage />
@@ -29,7 +30,6 @@ function App() {
           <Route path="/t&c" element={<TermsAndConditions />} />
 
           {/* Optional: still allow auth if needed */}
-          <Route path="/auth" element={<AuthPage />} />
 
           {/* Catch all */}
           <Route
